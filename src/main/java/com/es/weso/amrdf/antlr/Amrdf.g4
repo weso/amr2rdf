@@ -1,0 +1,205 @@
+grammar Amrdf;
+
+@header {
+    package com.es.weso.amrdf.antlr;
+}
+
+amrset: amr+;
+amr: '(' varName '/' varType (coreRule | nonCoreRule)* ')' ;
+text: '"' TEXT '"' ;
+terminal: amr | text | TEXT | DASH ;
+varName: (TEXT | DASH) ;
+varType: (TEXT | AMRUNKNOWN | DASH) ;
+coreRule: arg0 | arg1 | arg2 | arg3 | arg4 | arg0Of | arg1Of | arg2Of | arg3Of | arg4Of ;
+nonCoreRule: domain | name | wiki | mod | modeRule 
+    | location | degree | source | destination | path
+    | beneficiary | accompanier | topic | duration | instrument
+    | medium | manner | purpose | cause | concession
+    | condition | part | subevent | example | direction
+    | frequency | extent | poss | unit | polarity
+    | quant | time | year | consist
+    | locationOf | degreeOf | sourceOf | destinationOf | pathOf
+    | beneficiaryOf | accompanierOf | topicOf | durationOf | instrumentOf
+    | mediumOf | mannerOf | purposeOf | causeOf | concessionOf
+    | conditionOf | partOf | subeventOf | exampleOf | directionOf
+    | frequencyOf | extentOf | quantOf | nameOf | unitOf
+    | consistOf | domainOf | modeOf | modOf | possOf
+    | op1 | op2 | op3 | op4 | op1Of | op2Of | op3Of | op4Of ;
+arg0: ARG0 terminal ;
+arg1: ARG1 terminal ;
+arg2: ARG2 terminal ;
+arg3: ARG3 terminal ;
+arg4: ARG4 terminal ;
+arg0Of: ARG0OF terminal ;
+arg1Of: ARG1OF terminal ;
+arg2Of: ARG2OF terminal ;
+arg3Of: ARG3OF terminal ;
+arg4Of: ARG4OF terminal ;
+domain: DOMAIN terminal ;
+name: NAME terminal ;
+wiki: WIKI terminal ;
+mod: MOD terminal ;
+modeRule: MODE terminal ;
+location: LOCATION terminal ;
+degree: DEGREE terminal ;
+source: SOURCE terminal ;
+destination: DESTINATION terminal ;
+path: PATH terminal ;
+beneficiary: BENEFICIARY terminal ;
+accompanier: ACCOMPANIER terminal ;
+topic: TOPIC terminal ;
+duration: DURATION terminal ;
+instrument: INSTRUMENT terminal ;
+medium: MEDIUM terminal ;
+manner: MANNER terminal ;
+purpose: PURPOSE terminal ;
+cause: CAUSE terminal ;
+concession: CONCESSION terminal ;
+condition: CONDITION terminal ;
+part: PART terminal ;
+subevent: SUBEVENT terminal ;
+example: EXAMPLE terminal ;
+direction: DIRECTION terminal ;
+frequency: FREQUENCY terminal ;
+extent: EXTENT terminal ;
+poss: POSS terminal ;
+unit: UNIT terminal ;
+polarity: POLARITY terminal ;
+quant: QUANT terminal ;
+time: TIME terminal ;
+year: YEAR terminal ;
+consist: CONSIST terminal ;
+consistOf: CONSISTOF terminal ;
+domainOf: DOMAINOF terminal ;
+modeOf: MODEOF terminal ;
+modOf: MODOF terminal ;
+locationOf: LOCATIONOF terminal ;
+degreeOf: DEGREEOF terminal ;
+sourceOf: SOURCEOF terminal ;
+destinationOf: DESTINATIONOF terminal ;
+pathOf: PATHOF terminal ;
+beneficiaryOf: BENEFICIARYOF terminal ;
+accompanierOf: ACCOMPANIEROF terminal ;
+topicOf: TOPICOF terminal ;
+durationOf: DURATIONOF terminal ;
+instrumentOf: INSTRUMENTOF terminal ;
+mediumOf: MEDIUMOF terminal ;
+mannerOf: MANNEROF terminal ;
+purposeOf: PURPOSEOF terminal ;
+causeOf: CAUSEOF terminal ;
+concessionOf: CONCESSIONOF terminal ;
+conditionOf: CONDITIONOF terminal ;
+partOf: PARTOF terminal ;
+subeventOf: SUBEVENTOF terminal ;
+exampleOf: EXAMPLEOF terminal ;
+directionOf: DIRECTIONOF terminal ;
+frequencyOf: FREQUENCYOF terminal ;
+extentOf: EXTENTOF terminal ;
+possOf: POSSOF terminal ;
+quantOf: QUANTOF terminal ;
+nameOf: NAMEOF terminal ;
+unitOf: UNITOF terminal ;
+op1: OP1 terminal ;
+op2: OP2 terminal ;
+op3: OP3 terminal ;
+op4: OP4 terminal ;
+op1Of: OP1OF terminal ;
+op2Of: OP2OF terminal ;
+op3Of: OP3OF terminal ;
+op4Of: OP4OF terminal ;
+
+LEFT_BRACE: '(' ;
+RIGHT_BRACE: ')' ;
+SLASH: '/' ;
+COLON: ':' ;
+DASH: '-' ;
+ARG0: ':ARG0' | ':arg0' ;
+ARG0OF: ':ARG0-of' | ':arg0-of' ;
+ARG1: ':ARG1' | ':arg1' ;
+ARG1OF: ':ARG1-of' | ':arg1-of' ;
+ARG2: ':ARG2' | ':arg2' ;
+ARG2OF: ':ARG2-of' | ':arg2-of' ;
+ARG3: ':ARG3' | ':arg3' ;
+ARG3OF: ':ARG3-of' | ':arg3-of' ;
+ARG4: ':ARG4' | ':arg4' ;
+ARG4OF: ':ARG4-of' | ':arg4-of' ;
+DOMAIN: ':domain' ;
+DOMAINOF: ':domain-of' ;
+NAME: ':name' ;
+CONSISTOF: ':consist-of' ;
+WIKI: ':wiki' ;
+MODEOF: ':mode-of' ;
+MODOF: ':mod-of' ;
+MOD: ':mod' ;
+MODE: ':mode' ;
+LOCATION: ':location' ; 
+DEGREE: ':degree' ;
+SOURCE: ':source' ;
+DESTINATION: ':destination' ;
+PATH: ':path' ;
+BENEFICIARY: ':beneficiary' ;
+ACCOMPANIER: ':accompanier' ;
+TOPIC: ':topic' ;
+DURATION: ':duration' ;
+INSTRUMENT: ':instrument' ;
+MEDIUM: ':medium' ;
+MANNER: ':manner' ;
+PURPOSE: ':purpose' ;
+CAUSE: ':cause' ;
+CONCESSION: ':concession' ;
+CONDITION: ':condition' ;
+PART: ':part' ;
+SUBEVENT: ':subevent' ;
+EXAMPLE: ':example' ;
+DIRECTION: ':direction' ;
+FREQUENCY: ':frequency' ;
+EXTENT: ':extent' ;
+POSS: ':poss' ;
+UNIT: ':unit' ;
+POLARITY: ':polarity' ;
+QUANT: ':quant' ;
+TIME: ':time' ;
+YEAR: ':year' ;
+CONSIST: ':consist' ;
+LOCATIONOF: ':location-of' ; 
+DEGREEOF: ':degree-of' ;
+SOURCEOF: ':source-of' ;
+DESTINATIONOF: ':destination-of' ;
+PATHOF: ':path-of' ;
+BENEFICIARYOF: ':beneficiary-of' ;
+ACCOMPANIEROF: ':accompanier-of' ;
+TOPICOF: ':topic-of' ;
+DURATIONOF: ':duration-of' ;
+INSTRUMENTOF: ':instrument-of' ;
+MEDIUMOF: ':medium-of' ;
+MANNEROF: ':manner-of' ;
+PURPOSEOF: ':purpose-of' ;
+CAUSEOF: ':cause-of' ;
+CONCESSIONOF: ':concession-of' ;
+CONDITIONOF: ':condition-of' ;
+PARTOF: ':part-of' ;
+SUBEVENTOF: ':subevent-of' ;
+EXAMPLEOF: ':example-of' ;
+DIRECTIONOF: ':direction-of' ;
+FREQUENCYOF: ':frequency-of' ;
+EXTENTOF: ':extent-of' ;
+POSSOF: ':poss-of' ;
+QUANTOF: ':quant-of' ;
+NAMEOF: ':name-of' ;
+UNITOF: ':unit-of' ;
+OP1: ':op1' ;
+OP2: ':op2' ;
+OP3: ':op3' ;
+OP4: ':op4' ;
+OP1OF: ':op1-of' ;
+OP2OF: ':op2-of' ;
+OP3OF: ':op3-of' ;
+OP4OF: ':op4-of' ;
+AMRUNKNOWN: 'amr-unknown' ;
+TEXT: (LETTER | DIGIT | OTHERALLOWEDCHARACTERS)+ ;
+COMMENT: '#' ~[\r\n]* -> skip ;
+WS: [ \t\n\r] -> skip ;
+
+fragment LETTER: [a-zA-Záéíóúñ] ;
+fragment DIGIT: [0-9] ;
+fragment OTHERALLOWEDCHARACTERS: [-_'?/,.] ;

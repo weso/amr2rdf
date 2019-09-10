@@ -1,0 +1,19 @@
+(u_2376 / work-01
+    :ARG0 (u_2375 / person
+        :name (u_2383 / name
+            :op1 Joseph
+            :op2 R.
+            :op3 Biden)
+        :wiki Joseph_R._Biden)
+    :ARG3 (u_2390 / person
+        :name (u_2393 / name
+            :op1 Barack
+            :op2 Obama)
+        :wiki Barack_Obama)
+    :ARG1 (u_2401 / vice-president)
+    :time (u_2403 / after
+        :op1 (u_2404 / date-entity
+            :year (u_2408 / a2009)))
+    :time (u_2409 / before
+        :op1 (u_2410 / date-entity
+            :year (u_2414 / a2017))))
